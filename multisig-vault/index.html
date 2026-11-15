@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Enterprise Multisig Vault</title>
+<style>body{background:#0b0f19;color:#f1f5f9;font-family:'Inter',monospace;padding:32px;margin:0}
+.wrap{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 1.4fr;gap:20px}
+.panel{padding:22px;border:1px solid #1e293b;border-radius:12px;background:#111827}
+.badge{padding:4px 8px;border-radius:6px;font-size:12px;background:#065f46;color:#34d399;font-weight:bold}
+.bar-bg{background:#1e293b;height:10px;border-radius:5px;margin:8px 0;overflow:hidden}
+.bar-fill{background:#3b82f6;height:100%}
+.tx{padding:12px;border:1px solid #334155;border-radius:8px;margin-bottom:12px;background:#0f172a}
+button{padding:9px 14px;margin-right:6px;margin-top:8px;border-radius:6px;border:none;background:#3b82f6;color:#fff;font-weight:bold;cursor:pointer}
+button.exec{background:#10b981}button.rev{background:#ef4444}</style></head>
+<body><div class="wrap">
+<div class="panel"><h3>🛡️ Multisig Vault Status</h3>
+<p>Balance: <strong>4.250 ETH</strong> <span class="badge">2 / 3 Threshold</span></p>
+<p style="font-size:13px;color:#94a3b8">Owners:<br>• 0x71C...89A (You)<br>• 0x95a...31B<br>• 0x4B2...10F</p>
+<hr style="border-color:#1e293b;margin:16px 0">
+<h4>⚙️ Self-Targeted Governance</h4>
+<button style="width:100%;background:#475569">➕ addOwner() [Auto-Encode Calldata]</button>
+<button style="width:100%;background:#475569">🔧 changeThreshold(2)</button></div>
+<div class="panel"><h3>📋 Transaction Queue</h3>
+<div class="tx"><div><strong>TX #1: Transfer 0.50 ETH</strong> → 0x88F...21C</div>
+<div style="font-size:12px;color:#34d399;margin-top:4px">Status: 2/2 Approvals (Ready to Execute)</div>
+<div class="bar-bg"><div class="bar-fill" style="width:100%;background:#10b981"></div></div>
+<button class="exec">⚡ executeTransaction(1)</button><button class="rev">✖ revokeApproval(1)</button></div>
+<div class="tx"><div><strong>TX #2: addOwner(0x3C4...99E)</strong> [Self-Call]</div>
+<div style="font-size:12px;color:#fbbf24;margin-top:4px">Status: 1/2 Approvals (Needs Confirmation)</div>
+<div class="bar-bg"><div class="bar-fill" style="width:50%"></div></div>
+<button>✓ approveTransaction(2)</button><button class="rev">✖ revokeApproval(2)</button></div>
+</div></div></body></html>
